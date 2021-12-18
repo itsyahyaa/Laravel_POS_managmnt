@@ -29,10 +29,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 // creating route for all controllers
 
-Route::resource('/orders', [OrderController::class, 'index']);
-Route::resource('/products', [ProductController::class, 'index']);
-Route::resource('/suppliers', [SupplierController::class, 'index']);
-Route::resource('/users', [UserController::class, 'index']);
-Route::resource('/companies', [CompanyController::class, 'index']);
-Route::resource('/transactions', [TransactionController::class, 'index']);
+Route::resource('/orders', OrderController::class);
+Route::resource('/products', ProductController::class);
+Route::resource('/suppliers', SupplierController::class);
+Route::resource('/users', UserController::class);
+Route::resource('/companies', CompanyController::class);
+Route::resource('/transactions', TransactionController::class);
 
