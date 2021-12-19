@@ -15,6 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $products = Product::paginate(5);
+        return view('products', compact('products'));
     }
 
     /**
@@ -22,9 +24,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -36,6 +39,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+         Product::create($request->all()); // this is code when you want to add all input to database
+         return redirect()->back()->with('success','Product Created Successfully');
     }
 
     /**
@@ -70,6 +75,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+            $product->update($request->all());
+            return redirect()->back()->with('Success','Product Updated Successfully');
     }
 
     /**
@@ -81,5 +88,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        $product->delete();
+        return redirect()->back()->with('Success','Product Deleted Successfully');
     }
 }
