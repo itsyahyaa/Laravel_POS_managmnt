@@ -30,7 +30,7 @@
                 <a href="{{ route('products.index')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-truck me-2"></i>Products</a>
 
-                <a href="/inventory" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{ route('suppliers.index')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-area me-2"></i>Suppliers</a>
 
                 <a href="/inventory" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -45,7 +45,7 @@
                 <a href="report" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-paperclip me-2"></i>Reports</a>
 
-                <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                <a href="{{route('users.index')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-comment-dots me-2"></i>Users</a>
 
 
