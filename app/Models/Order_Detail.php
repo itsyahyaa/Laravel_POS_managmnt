@@ -9,5 +9,16 @@ class Order_Detail extends Model
 {
     use HasFactory;
     protected $table = 'order_details';
-    protected $fillable = ['order_id','product_id','quantity','unitprice','amount'];
+    protected $fillable = ['order_id','product_id','quantity','unitprice','amount','discount'];
+
+    //creating relationship
+    public function product(){
+        return $this->belongsTo('App\Models\Product');
+
+    }
+
+    public function order(){
+        return $this->belongsTo('App\Models\Order');
+
+    }
 }

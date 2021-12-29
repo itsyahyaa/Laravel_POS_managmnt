@@ -64,7 +64,7 @@
                                                     <td>
                                                         <div class="btn-group">
                                                             <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#edit{{ $product->id }}"><i class="fas fa-edit" > Edit</i></a>
-                                                            <a href="#" class="btn btn-danger btn-sm" ata-bs-toggle="modal" data-bs-target="#delete{{ $product->id }}"><i class="fas fa-trash" d> Delete</i></a>
+                                                            <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete{{ $product->id }}"><i class="fas fa-trash" > Delete</i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -117,7 +117,9 @@
                                                 </div>
                                                  {{-- Delete User Modal --}}
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="delete{{ $product->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                                {{-- delete --}}
+                                                <div class="modal fade" id="delete{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -129,9 +131,6 @@
                                                             <form action="{{ route('products.destroy',$product->id)}}" method="POST">
                                                                 @csrf
                                                                 @method('delete')
-                                                                <div>
-                                                                <p>Are You Sure you want to delete this {{ $product->product_name}}</p>
-                                                                </div>
 
 
                                                                 <div class="modal-footer">
@@ -145,11 +144,13 @@
                                                     </div>
                                                 </div>
 
+
                                                 @endforeach
 
                                             </tbody>
+
                                         </table>
-                                        {{$products->links()}}
+
                                     </div>
                                 </div><!-- /.card-body -->
                             </div> <!-- /.card -->

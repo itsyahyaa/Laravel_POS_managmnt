@@ -36,3 +36,7 @@ Route::resource('/users', UserController::class);
 Route::resource('/companies', CompanyController::class);
 Route::resource('/transactions', TransactionController::class);
 
+Route::get('receipt', function(){
+    return view('report.receipt');
+});
+

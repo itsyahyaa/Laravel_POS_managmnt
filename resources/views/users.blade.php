@@ -64,7 +64,8 @@
                                                     <td>
                                                         <div class="btn-group">
                                                             <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#edit{{ $user->id }}"><i class="fas fa-edit" > Edit</i></a>
-                                                            <a href="#" class="btn btn-danger btn-sm" ata-bs-toggle="modal" data-bs-target="#delete{{ $user->id }}"><i class="fas fa-trash" d> Delete</i></a>
+                                                            <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete{{ $user->id }}"><i class="fas fa-trash" > Delete</i></a>
+
                                                         </div>
                                                     </td>
                                                 </tr>
