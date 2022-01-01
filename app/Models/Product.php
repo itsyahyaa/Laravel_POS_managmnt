@@ -15,4 +15,8 @@ class Product extends Model
     public function orderdetails(){
         return $this->hasMany('App\Models\Order_Detail');
     }
+    //creating relationship
+    public function cart(){
+        return $this->hasMany('App\Models\Cart');
+    }
 }

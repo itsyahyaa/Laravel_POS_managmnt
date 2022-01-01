@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Order_Detail;
 use App\Models\Transaction;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,7 +47,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->all();
         DB::transaction(function () use ($request) {
 
             //Order Modal
@@ -80,6 +81,10 @@ class OrderController extends Controller
             $transaction->transac_amount = $order_details->amount;
             $transaction->transac_date = date('Y-m-d');
             $transaction->save();
+
+            // delete
+            // DB::table('carts')->delete();
+            Cart::where('user_id',auth()->user()->id)->delete();
 
             //last order History
             $products = Product::all();
