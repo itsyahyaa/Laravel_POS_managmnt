@@ -17,8 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('product_name');
             $table->text('description');
-            $table->string('brand');
+            $table->string('brand')->nullable();
             $table->integer('price');
+            $table->string('product_code')->nullable();
+            $table->text('barcode')->nullable();
+            $table->string('qrcode')->nullable();
+            $table->string('product_image')->nullable();
             $table->integer('quantity');
             $table->integer('alert_stock')->default('100');
             $table->timestamps();
